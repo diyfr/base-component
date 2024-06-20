@@ -7,11 +7,11 @@ class TestComponent extends BaseComponent {
     super();
     this.element = document.createElement('div');
     this.element.textContent = 'Test Component';
+    this.onInit =()=>{
+      console.log('Component initialized');
+    }
   }
 
-  public onInit() {
-    console.log('Component initialized');
-  }
 }
 
 describe('BaseComponent', () => {
