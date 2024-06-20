@@ -1,0 +1,57 @@
+{
+  "name": "@diyfr/base-component",
+  "version": "0.8.0",
+  "description": "A lightweight component for creating and manipulating DOM elements in typescript",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node --files ./node_modules/jest/bin/jest",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diyfr/quickdom.git"
+  },
+  "keywords": [
+    "dom",
+    "base-component",
+    "vanilla",
+    "typescript",
+    "component",
+    "lightweight"
+  ],
+  "author": "diyfr",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bugs": {
+    "url": "https://github.com/diyfr/base-component/issues"
+  },
+  "homepage": "https://github.com/diyfr/base-component#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.2",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
