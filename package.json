@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diyfr/quickdom.git"
+    "url": "git+https://github.com/diyfr/base-component.git"
   },
   "keywords": [
     "dom",
