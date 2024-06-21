@@ -28,7 +28,7 @@
     "vite-plugin-pwa": "^0.16.4"
   },
   "dependencies": {
-    "@diyfr/quickdom": "0.9.4",
-    "@diyfr/base-component": "0.8.1"
+    "@diyfr/quickdom": "0.9.5",
+    "@diyfr/base-component": "0.8.2"
   }
 }
