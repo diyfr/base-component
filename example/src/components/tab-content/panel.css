@@ -1,0 +1,41 @@
+/**/
+
+.tab-content {
+    display: none;
+    overflow: visible;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tab-content:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.tab-content.active {
+    display: block;
+    background-color: #efefef;
+}
+
+.tab-content-title {
+    margin: 0;
+    padding: 8px 0 0 16px;
+    font-weight: 400;
+}
+
+
+.tab-content>div{
+    overflow: hidden !important;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    float: left;
+    background-color: #efefef;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    font-size: 18px;
+    height: auto;
+    padding: 10px;
+}

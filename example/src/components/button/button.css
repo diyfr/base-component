@@ -1,0 +1,31 @@
+.btn {
+  background-color: var(--cqrcode-primaire);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+}
+
+.btn-disabled{
+  background-color: var(--cqrcode-disabled);
+}
+
+.btn>span {
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: var(--font-size-big);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.btn>i {
+  height: 24px;
+  width: 24px;
+}

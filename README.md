@@ -50,6 +50,27 @@ myComponent.remove().then(() => {
   console.log('Composant supprimé');
 });
 ```
+#### Initialisation
+```typescript
+onInit: () => void
+```
+Cette méthode est déclenchée par votre composant après que l'élément ait été rendu dans le DOM.
+
+```typescript
+class MyComponent extends BaseComponent {
+  element: HTMLElement;
+
+  constructor() {
+    super();
+    this.element = document.createElement('div');
+    this.element.textContent = 'Hello, world!';
+    this.element.onInit =()=>{
+    console.log('Composant initialisé');
+    }
+  }
+}
+```
+
 #### MAJ Classe CSS 🚧
 ```typescript
 classListUpdate(element: HTMLElement, className: string, add: boolean)
@@ -70,28 +91,6 @@ myComponent.waitForRendering('myElementId').then(element => {
   console.log('Élément rendu :', element);
 });
 ```
-#### Initialisation  🚧
-```typescript
-onInit: () => void
-```
-Cette méthode peut être redéfinie dans votre composant pour exécuter du code après que l'élément ait été rendu dans le DOM.
-
-```typescript
-class MyComponent extends BaseComponent {
-  element: HTMLElement;
-
-  constructor() {
-    super();
-    this.element = document.createElement('div');
-    this.element.textContent = 'Hello, world!';
-  }
-
-  public onInit() {
-    console.log('Composant initialisé');
-  }
-}
-```
-
 
 ### Licence
 Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.

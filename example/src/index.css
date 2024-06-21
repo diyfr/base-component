@@ -1,0 +1,57 @@
+:root {
+  --c-bloc-header-bkg: green;
+  --c-bloc-header-border: lightgrey;
+  --c-bloc-header: white;
+
+  --c-header-bkg: darkgreen;
+  --c-header: white;
+
+}
+
+
+body {
+  --font-size-big: 24px;
+  --font-size-normal: 16px;
+  --font-size-small: 14px;
+  font-family: "Avenir", Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+@media (max-width: 700px) {
+  body {
+    --font-size-big: 20px;
+    --font-size-normal: 15px;
+    --font-size-small: 14px;
+  }
+}
+
+
+@media (max-width: 510px) {
+  body {
+    --font-size-big: 18px;
+    --font-size-normal: 14px;
+    --font-size-small: 14px;
+
+  }
+
+}
+
+
+input,
+textarea {
+  font-size: var(--font-size-normal);
+}
+
+@media print {
+
+  .column:nth-child(-n+2),
+  .buttons-download,
+  .bloc-header {
+    display: none;
+  }
+
+  .bloc-content {
+    border: 0px;
+  }
+}

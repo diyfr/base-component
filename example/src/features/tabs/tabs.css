@@ -1,0 +1,8 @@
+/**/
+.tabs{
+    overflow: visible;
+    max-width: 1200px;
+    margin: auto;
+    display: flow-root;
+    padding: 16px;
+}

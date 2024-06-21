@@ -1,0 +1,7 @@
+main {
+    overflow: visible;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flow-root;
+}
