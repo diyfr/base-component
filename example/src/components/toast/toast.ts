@@ -35,13 +35,11 @@ export class Toast extends BaseComponent {
                 this.classListUpdate(this.element, 'toast-success', true);
                 break;
         }
-        let msg = qd('div', { className: 'toast-content' })
-        msg.innerHTML = message;
+        let msg = qd('div', { className: 'toast-content', innerHTML: message })
         this.element.appendChild(msg);
 
         let close = qd('div', { className: 'toast-close' })
-        let iconClose = qd('img');
-        iconClose.src = './close.svg'
+        let iconClose = qd('img', { src: './close.svg' });
         close.appendChild(iconClose);
         close.addEventListener("click", (e: Event) => {
             e.preventDefault();

@@ -1,12 +1,14 @@
 # BaseComponent
-La librairie `base-component` fournit une classe abstraite en TypeScript qui facilite la gestion de la création, de l'affichage et de la suppression des éléments HTML dans le DOM.    
-Elle inclut également des méthodes pour la mise à jour des classes CSS des éléments et pour attendre que les éléments soient effectivement rendus dans le DOM.  
-C'est un composant de base pouvant être utilisé dans un projet single page en vanilla-js  
+La librairie `base-component` fournit une classe abstraite en TypeScript qui va vous permettre la création de composants HTML. A vous de définir la complexité de vos composants et des interactions possibles. 
+
+Ce n'est pas un framework, il n'y a pas de dépendances (donc pas de CVE), mais cela vous laisse la possibilité de créer des applications WEB structurées et facilement maintenables, car c'est du HTML de base ! 
+
+A vous de créer votre projet single page en vanilla-js 😊
 
 ### Installation
 Assurez-vous d'avoir un environnement TypeScript configuré.
 ```bash
-npm install @diyfr/base-component
+npm install --save-dev @diyfr/base-component
 ```
 
 ### Utilisation
@@ -14,7 +16,7 @@ Hériter de BaseComponent
 Pour utiliser BaseComponent, vous devez créer une nouvelle classe qui hérite de BaseComponent et implémente la propriété element.
 
 ```typescript
-import BaseComponent from './BaseComponent';
+import BaseComponent from '@diyfr/base-component';
 
 class MyComponent extends BaseComponent {
   element: HTMLElement;
@@ -26,6 +28,25 @@ class MyComponent extends BaseComponent {
   }
 }
 ```
+ou en utilisant conjointement avec la librairie `@diyfr/quickdom`  
+
+```typescript
+import BaseComponent from '@diyfr/base-component';
+import {qd} from '@diyfr/quickdom';
+
+class MyComponent extends BaseComponent {
+  element: HTMLElement;
+
+  constructor() {
+    super();
+    this.element = qd('div', {className: 'mydiv' , textContent: 'Hello, world!'});
+  }
+}
+```
+
+Un exemple avec plusieurs éléments HTML est disponible [sur ce repo, ici](./example/), vous y trouverez comment builder votre projet Vanilla, comment créer des interfaces evenementielles.  
+(Voir le composant [HorizontalTab](./example/src/components/horizontal-tab/horizontal-tab.ts)   et l'utilisation de l'évènement `onChange` [ici](./example/src/features/tabs/tabs.ts#24) )   
+
 Méthodes
 #### Ajout d'un élément
 ```typescript
@@ -70,6 +91,8 @@ class MyComponent extends BaseComponent {
   }
 }
 ```
+
+🚧 Cette librairie inclut également une méthode pour la mise à jour des classes CSS des éléments et une pour attendre que les éléments soient effectivement rendus dans le DOM.  
 
 #### MAJ Classe CSS 🚧
 ```typescript

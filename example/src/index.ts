@@ -14,12 +14,7 @@ function render() {
     const minWidth = 330;
     if (screen.width < minWidth) {
       document.head.removeChild(vPort);
-      let newViewport = qd("meta");
-      newViewport.setAttribute("name", "viewport");
-      newViewport.setAttribute(
-        "content",
-        "width=" + minWidth + ", initial-scale=1, user-scalable=no"
-      );
+      let newViewport = qd("meta", { name: "viewport", content: "width=" + minWidth + ", initial-scale=1, user-scalable=no" });
       document.head.appendChild(newViewport);
       return;
     }

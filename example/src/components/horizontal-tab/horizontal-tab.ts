@@ -1,6 +1,6 @@
-import Tab from "../../models/tab.model";
 import BaseComponent from '@diyfr/base-component';
-import {qd} from '@diyfr/quickdom';
+import { qd } from '@diyfr/quickdom';
+import Tab from "../../models/tab.model";
 import './horizontal-tab.css';
 
 
@@ -18,8 +18,7 @@ export default class HorizontalTab extends BaseComponent {
         super();
         this.element = qd('div', { className: 'tabs' });
         tabsList.forEach(t => {
-            let anchor = qd('a', { className: 'tab', id: t.name })
-            anchor.textContent = t.label;
+            let anchor = qd('a', { className: 'tab', id: t.name, textContent: t.label })
             anchor.onclick = (_ev: MouseEvent) => {
                 this.changeTab(t.name);
             }
