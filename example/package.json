@@ -26,6 +26,6 @@
     "vite": "^4.4.9",
     "vite-plugin-pwa": "^0.16.4",
     "@diyfr/quickdom": "0.9.5",
-    "@diyfr/base-component": "0.8.3"
+    "@diyfr/base-component": "0.8.4"
   }
 }
