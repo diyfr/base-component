@@ -21,14 +21,10 @@ export default class Bloc extends BaseComponent {
     if (id) {
       this.element.id = id;
     }
-    let headerElement = qd("div");
-    headerElement.className = "bloc-header";
-    let titleElement = qd("div");
-    titleElement.className = "title";
-    titleElement.innerHTML = title;
+    let headerElement = qd("div", {className:"bloc-header"});
+        let titleElement = qd("div", {className:"title", innerHTML:title});
     headerElement.appendChild(titleElement);
-    this.iconElement = qd("div");
-    this.iconElement.className = "icon";
+    this.iconElement = qd("div",{className :"icon"});
     if (canReduce) {
       if (reduce) {
         this.iconElement.innerHTML = expandIcon;

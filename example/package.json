@@ -25,10 +25,8 @@
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
-    "vite-plugin-pwa": "^0.16.4"
-  },
-  "dependencies": {
-    "@diyfr/quickdom": "0.9.4",
-    "@diyfr/base-component": "0.8.2"
+    "vite-plugin-pwa": "^0.16.4",
+    "@diyfr/quickdom": "0.9.5",
+    "@diyfr/base-component": "0.8.3"
   }
 }

@@ -42,6 +42,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Exclude demo package lock 
+example/package-lock.json
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -129,3 +132,4 @@ lib
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+

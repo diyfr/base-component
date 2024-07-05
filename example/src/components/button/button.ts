@@ -1,6 +1,6 @@
-import "./button.css";
 import BaseComponent from '@diyfr/base-component';
-import {qd} from '@diyfr/quickdom';
+import { qd } from '@diyfr/quickdom';
+import "./button.css";
 
 export default class Button extends BaseComponent {
   readonly element: HTMLButtonElement;
@@ -31,12 +31,10 @@ export default class Button extends BaseComponent {
       this.element.title = title;
     }
     if (iconSVG) {
-      let icon = document.createElement("i");
-      icon.innerHTML = iconSVG;
+      let icon = qd("i", { innerHTML: iconSVG });
       this.element.append(icon);
 
-      let span = document.createElement("span");
-      span.textContent = text;
+      let span = qd("span", { textContent: text });
       this.element.append(span);
     } else {
       this.element.textContent = text;
@@ -51,10 +49,6 @@ export default class Button extends BaseComponent {
 
   public disabled(disable: boolean): void {
     this.isDisabled = disable
-    if (disable) {
-      this.element.classList.add("btn-disabled");
-    } else {
-      this.element.classList.remove("btn-disabled");
-    }
+    this.classListUpdate(this.element, "btn-disabled", disable);
   }
 }
