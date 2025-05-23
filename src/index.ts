@@ -28,6 +28,11 @@ export default abstract class BaseComponent {
   */
   public onInit: () => void = () => {};
 
+  /**
+   * Remove this element from parent
+   * @param parent Si pas d'élément spécifié le body est pris par défaut
+   * @returns    
+  */
   public remove(parent?: HTMLElement | BaseComponent): Promise<void> {
     return new Promise((resolve, _reject) => {
       setTimeout(() => {
@@ -44,6 +49,36 @@ export default abstract class BaseComponent {
     });
   }
 
+
+	/**
+   * WIP
+	 * Remove childs from this element
+	 * @returns Promise<void>   
+	*/
+	public removeChilds(): Promise<void> {
+		return new Promise((resolve) => {
+			const removeNext = () => {
+				if (!this.element.firstChild) {
+					resolve();
+					return;
+				}
+				const child = this.element.firstChild as any;
+				Promise.resolve()
+					.then(() => child.disposeChilds?.())
+					.then(() => child.dispose?.())
+					.then(() => {
+						if (typeof child.remove === 'function') {
+							return child.remove(this.element);
+						} else {
+							this.element.removeChild(child);
+						}
+					})
+					.then(() => removeNext());
+			};
+			removeNext();
+		});
+	}
+  
   /** 
     WIP
   */
