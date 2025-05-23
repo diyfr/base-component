@@ -1,6 +1,6 @@
 {
   "name": "@diyfr/base-component",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "description": "A lightweight component for creating and manipulating DOM elements in typescript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
